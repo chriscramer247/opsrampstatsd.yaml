@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: opsramp-agent
+  namespace: opsramp-agent
+spec: 
+  selector: 
+    app: opsramp-k8s-agent
+  type: NodePort
+  ports: 
+  - protocol: UDP
+    port: 8125
+    targetPort: 8125
